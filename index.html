@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#box{
+    text-align:center;
+}
+
+input{
+    width:180px;
+    padding:10px;
+    font-size:18px;
+    text-align:center;
+    border:2px solid #000;
+    outline:none;
+}
+
+button{
+    margin-top:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:30px;
+    font-size:40px;
+    font-weight:bold;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="box">
+    <input type="password" id="code" placeholder="Enter Code" maxlength="3">
+    <br>
+    <button onclick="check()">Enter</button>
+
+    <div id="result">you won</div>
+</div>
+
+<script>
+function check(){
+    const value = document.getElementById("code").value;
+
+    if(value === "603"){
+        document.getElementById("result").style.display = "block";
+        document.getElementById("code").style.display = "none";
+        document.querySelector("button").style.display = "none";
+    }else{
+        document.getElementById("code").value = "";
+    }
+}
+
+document.getElementById("code").addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+        check();
+    }
+});
+</script>
+
+</body>
+</html>
