@@ -26,26 +26,35 @@ body{
 }
 
 input{
-    width:180px;
-    padding:10px;
-    font-size:18px;
+    width:220px;
+    padding:12px;
+    font-size:20px;
     text-align:center;
     border:2px solid #000;
     outline:none;
 }
 
 button{
-    margin-top:10px;
-    padding:10px 20px;
-    font-size:16px;
+    margin-top:12px;
+    padding:10px 22px;
+    font-size:17px;
     cursor:pointer;
 }
 
 #result{
-    margin-top:30px;
-    font-size:40px;
-    font-weight:bold;
     display:none;
+}
+
+#message{
+    font-size:42px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+#link{
+    font-size:54px;
+    font-weight:bold;
+    word-break:break-word;
 }
 </style>
 </head>
@@ -53,21 +62,24 @@ button{
 <body>
 
 <div id="box">
-    <input type="password" id="code" placeholder="Enter Code" maxlength="3">
+    <input type="password" id="code" placeholder="Enter Code" maxlength="5">
     <br>
     <button onclick="check()">Enter</button>
 
-    <div id="result">you won</div>
+    <div id="result">
+        <div id="message">the truth does not move</div>
+        <div id="link">middle-suffix.gl.joinmc.link</div>
+    </div>
 </div>
 
 <script>
 function check(){
     const value = document.getElementById("code").value;
 
-    if(value === "603"){
-        document.getElementById("result").style.display = "block";
+    if(value === "15246"){
         document.getElementById("code").style.display = "none";
         document.querySelector("button").style.display = "none";
+        document.getElementById("result").style.display = "block";
     }else{
         document.getElementById("code").value = "";
     }
