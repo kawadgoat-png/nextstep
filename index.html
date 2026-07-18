@@ -43,6 +43,7 @@ button{
 
 #result{
     display:none;
+    text-align:center;
 }
 
 #message{
@@ -55,6 +56,14 @@ button{
     font-size:54px;
     font-weight:bold;
     word-break:break-word;
+    margin-bottom:25px;
+}
+
+#code64{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#444;
 }
 </style>
 </head>
@@ -69,24 +78,25 @@ button{
     <div id="result">
         <div id="message">the truth does not move</div>
         <div id="link">middle-suffix.gl.joinmc.link</div>
+        <div id="code64">MS4yMS4xMQ==</div>
     </div>
 </div>
 
 <script>
-function check(){
+function check() {
     const value = document.getElementById("code").value;
 
-    if(value === "15246"){
+    if (value === "15246") {
         document.getElementById("code").style.display = "none";
         document.querySelector("button").style.display = "none";
         document.getElementById("result").style.display = "block";
-    }else{
+    } else {
         document.getElementById("code").value = "";
     }
 }
 
-document.getElementById("code").addEventListener("keydown", function(e){
-    if(e.key === "Enter"){
+document.getElementById("code").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
         check();
     }
 });
